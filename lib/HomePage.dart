@@ -129,7 +129,7 @@ class CountryLeaguesSection extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SoccerApp(id: league['id'],appState: AppState()),
+                      builder: (context) => SoccerApp(id: league['id'],name: "${league['country']}: ${league['name']}",appState: AppState()),
                     ),
                   );
                 },

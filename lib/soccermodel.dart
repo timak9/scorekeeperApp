@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 class SoccerMatch {
   //here we will see the different data
   //you will find every thing you need in the doc
@@ -89,6 +91,28 @@ class Goal {
     int home = json.containsKey('fts_A') ? json['fts_A'] : -1;
     int away = json.containsKey('fts_B') ? json['fts_B'] : -1;
     return Goal(home, away);
+  }
+
+  factory Goal.from1Byte(Uint8List data) {
+    if (data.length < 1) {
+      return Goal(0, 0);
+    }
+    int combined = data[0];  // Convertir le Uint8List en entier 8 bits
+    // Extraire les 4 bits de poids fort et les 4 bits de poids faible
+    int home = (combined & 0xF0) >> 4;  // Masquer avec 0xF0 et décaler 4 bits à droite
+    int away = combined & 0x0F;  // Masquer avec 0x0F
+    return Goal(home, away);
+  }
+
+  Uint8List create1Byte() {
+
+    // Créez l'entier 8 bits à partir des deux entiers 4 bits
+    int combined = (this.home << 4) | this.away;  // Décalez 'a' de 4 bits vers la gauche et faites un OU avec 'b'
+
+    // Créez le Uint8List
+    Uint8List uint8List = Uint8List.fromList([combined]);
+
+    return uint8List;
   }
 }
 

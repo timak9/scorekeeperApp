@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'soccermodel.dart';
 
 Widget matchTile(SoccerMatch match) {
+  print(match.goal.create1Byte());
 
   return Container(
     margin: EdgeInsets.symmetric(vertical: 12.0),

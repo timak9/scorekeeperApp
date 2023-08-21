@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scorekeeper/AppState.dart';
-import 'matchtitle.dart'; // Importez d'autres fichiers selon vos besoins
+import 'matchTile.dart'; // Importez d'autres fichiers selon vos besoins
 import 'soccermodel.dart';
 
 class PageBody extends StatefulWidget {
@@ -69,19 +69,12 @@ class _PageBodyState extends State<PageBody> {
                         icon: Icon(Icons.arrow_back),
                         onPressed: goToPreviousDay,
                       ),
-                      Text("Day ${appState.currentDayIndex + 1}"),
+                      Text("Week: ${widget.allmatches[appState.currentDayIndex].day}"),
                       IconButton(
                         icon: Icon(Icons.arrow_forward),
                         onPressed: goToNextDay,
                       ),
                     ],
-                  ),
-                  Text(
-                    "MATCHES",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24.0,
-                    ),
                   ),
                   Expanded(
                     child: ListView.builder(

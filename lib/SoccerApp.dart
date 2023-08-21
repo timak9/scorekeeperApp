@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:scorekeeper/api_manager.dart';
-import 'pagebody.dart'; // N'oubliez pas d'importer pagebody.dart si nécessaire
+import 'scoreMain.dart'; // N'oubliez pas d'importer pagebody.dart si nécessaire
 import 'package:scorekeeper/AppState.dart';
 
 
 
 class SoccerApp extends StatefulWidget {
   final int id;  // Déclaration de la variable id
+  final String name;
   final AppState appState;  // Passer l'instance d'appState ici
 
-  SoccerApp({required this.id, required this.appState});
+  SoccerApp({required this.id, required this.name, required this.appState});
 
   @override
   _SoccerAppState createState() => _SoccerAppState(appState: appState);
@@ -40,10 +41,11 @@ class _SoccerAppState extends State<SoccerApp> {
     return Scaffold(
       backgroundColor: Color(0xFFFAFAFA),
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Color(0xFFFAFAFA),
         elevation: 0.0,
         title: Text(
-          "SOCCERBOARD",
+          "${widget.name}",
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -70,7 +72,7 @@ class _SoccerAppState extends State<SoccerApp> {
                 child: Text("No data available"),
               );
             } else {
-              return PageBody(snapshot.data!, appState);
+              return scoreMain(snapshot.data!, appState);
             }
           },
         ),
