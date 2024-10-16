@@ -1,16 +1,13 @@
-# scorekeeper
+# Scorekeeper App (In Development)
 
-A new Flutter project.
+This Flutter-based mobile app allows users to create and manage leagues where friends can bet on match scores from various football (soccer) leagues worldwide. The app offers a flexible point system that league creators can customize, including setting points for correct predictions and adding custom bonuses to increase the fun and competition.
 
-## Getting Started
+## Features (In Progress)
+- Create private leagues with friends.
+- Manage prediction rules: assign points for correct guesses and define custom bonuses.
+- Global support for various football leagues.
+- Real-time score updates and leaderboard tracking.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## How to Use
+- **Download the App**: (In progress, will be available on major app stores soon).
+- Create a league, invite friends, and start predicting match scores!
